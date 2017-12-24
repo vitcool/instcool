@@ -1,0 +1,11 @@
+.login-button {
+  width: 100px;
+  height: 30px;
+  background: yellow;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 10px;
+  cursor: pointer; }
+  .login-button span {
+    text-align: center;
+    line-height: 30px; }
