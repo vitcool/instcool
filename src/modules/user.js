@@ -1,5 +1,5 @@
 import API from "../const/api";
-import axios from "axios";
+import jsonp from "jsonp";
 
 const LOGIN = "instcool/modules/LOGIN";
 const LOGIN_SUCCESS = "instcool/modules/LOGIN_SUCCESS";
@@ -40,30 +40,36 @@ export function login() {
 }
 
 export function loginSuccess() {
-    return {
-      type: LOGIN_SUCCESS
-    };
-  }
+  return {
+    type: LOGIN_SUCCESS
+  };
+}
 
-  export function loginError() {
-    return {
-      type: LOGIN_ERROR
-    };
-  }
+export function loginError() {
+  return {
+    type: LOGIN_ERROR
+  };
+}
 
 export function loginUser() {
   let url = API.API_URL;
   let method = API.AUTHARIZATION_METHOD;
   return function(dispatch) {
     dispatch(login);
-    return axios
-      .get(url + method, {
-        params: {
-          client_id: API.CLIENT_ID,
-          redirect_uri: "http://localhost:3000/",
-          response_type: "token"
+    return jsonp(
+      url + method,
+      {
+        param:
+          "client_id=" + API.CLIENT_ID +
+          "&redirect_uri=http://localhost:3000/&response_type=token"
+      },
+      function(err, data) {
+        if (err) {
+          dispatch(loginError());
+        } else {
+          dispatch(loginSuccess());
         }
-      })
-      .then(json => dispatch(loginSuccess()));
+      }
+    );
   };
 }
