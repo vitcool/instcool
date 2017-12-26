@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import "./StartPage.css";
-import { loginUser } from "../../modules/user";
 import API from "../../const/api";
 
 class StartPage extends Component {
-  onLoginClick() {
-    //this.props.dispatch(loginUser());
-  }
   render() {
     let url = API.API_URL;
     let method = API.AUTHARIZATION_METHOD;
