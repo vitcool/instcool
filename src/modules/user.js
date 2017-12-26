@@ -4,9 +4,10 @@ import jsonp from "jsonp";
 const LOGIN = "instcool/modules/LOGIN";
 const LOGIN_SUCCESS = "instcool/modules/LOGIN_SUCCESS";
 const LOGIN_ERROR = "instcool/modules/LOGIN_ERROR";
+const SAVE_ACCESS_TOKEN = "instcool/modules/SAVE_ACCESS_TOKEN";
 
 const initialState = {
-  userCode: "",
+  userAccessToken: "",
   isFetching: false,
   error: false
 };
@@ -27,6 +28,12 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, {
         isFetching: false,
         error: true
+      });
+    case SAVE_ACCESS_TOKEN:
+      return Object.assign({}, state, {
+        isFetching: false,
+        error: true,
+        userAccessToken: action.userAccessToken
       });
     default:
       return state;
@@ -51,6 +58,13 @@ export function loginError() {
   };
 }
 
+export function saveUserAccessToken(accessToken) {
+  return {
+    type: SAVE_ACCESS_TOKEN,
+    accessToken: accessToken
+  };
+}
+
 export function loginUser() {
   let url = API.API_URL;
   let method = API.AUTHARIZATION_METHOD;
@@ -60,7 +74,8 @@ export function loginUser() {
       url + method,
       {
         param:
-          "client_id=" + API.CLIENT_ID +
+          "client_id=" +
+          API.CLIENT_ID +
           "&redirect_uri=http://localhost:3000/&response_type=token"
       },
       function(err, data) {

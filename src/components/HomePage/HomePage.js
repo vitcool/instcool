@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
-import './HomePage.css';
+import React, { Component } from "react";
+import "./HomePage.css";
+import { connect } from "react-redux";
 
 class HomePage extends Component {
   render() {
-    return (
-      <div className="HomePage">
-        Hello, I am HomePage!
-      </div>
+    console.log(
+      "access_token",
+      this.props.location.hash.split("#access_token=")[1]
     );
+    return <div className="HomePage">Hello, I am HomePage!</div>;
   }
 }
 
-export default HomePage;
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  };
+};
+
+export default connect(mapStateToProps)(HomePage);

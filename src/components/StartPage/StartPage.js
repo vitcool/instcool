@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./StartPage.css";
-import { connect } from "react-redux";
 import { loginUser } from "../../modules/user";
 import API from "../../const/api";
 
@@ -29,10 +28,4 @@ class StartPage extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    user: state.user
-  };
-};
-
-export default connect(mapStateToProps)(StartPage);
+export default StartPage;
