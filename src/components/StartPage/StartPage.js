@@ -7,15 +7,16 @@ class StartPage extends Component {
     let url = API.API_URL;
     let method = API.AUTHARIZATION_METHOD;
     let params = "?client_id=" +
-    API.CLIENT_ID +
-    "&redirect_uri=http://localhost:3000/home&response_type=token";
+      API.CLIENT_ID +
+      "&redirect_uri=http://localhost:3000/home&response_type=token";
     return (
       <div className="start-page">
+        <div className="title-text">instcool</div>
         <a
           className="login-start-page"
           href={url + method + params}
         >
-          <div className="login-button" onClick={this.onLoginClick.bind(this)}>
+          <div className="login-button">
             <span>Login</span>
           </div>
         </a>

@@ -20,7 +20,7 @@ class HomePage extends Component {
     if (this.props.user.userMediaData.length){
       return this.props.user.userMediaData.map(function(element, i){
         debugger
-        return <img key={i} src={element.images.thumbnail ? element.images.thumbnail.url : 0} alt=""/>
+        return <img key={i} src={element.images.standard_resolution ? element.images.standard_resolution.url : 0} alt=""/>
       })
     }    
     else return 0;

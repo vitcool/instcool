@@ -7,9 +7,12 @@ a{
     height: 30px;
     background: yellow;
     margin: auto;
-    margin-top: 30px;
     border-radius: 10px;
     cursor: pointer;
+    position: absolute;
+    bottom: 10vh;
+    left: 0;
+    right: 0;
 
     span{
         color: black;
@@ -17,4 +20,26 @@ a{
         text-align: center;
         line-height: 30px;
     }
+}
+
+.start-page{
+    height:100vh;
+    background: url("../../img/start_background.jpg");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size:cover;
+
+    @media only screen and (min-width: 1300px) {
+        background: url("../../img/start_background_large.jpg");
+    }
+}
+
+.title-text{
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    font-size: 23px;
+
 }
