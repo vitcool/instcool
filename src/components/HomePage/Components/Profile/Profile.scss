@@ -1,0 +1,56 @@
+.profile-info {
+  height: 150px;
+  width: 100%;
+  font-family: myFont;
+
+  @font-face {
+    font-family: myFont;
+    src: url("../../../../fonts/IndieFlower.ttf");
+  }
+
+  .profile-photo {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    vertical-align: top;
+
+    .profile-img {
+      border-radius: 20px;
+      margin-left: 0;
+      float: left;
+    }
+  }
+
+  .profile-data {
+    vertical-align: top;
+    display: inline-block;
+    width: 80%;
+
+    .profile-data-info{
+        text-align: left;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .left-side{
+        float: left;
+    }
+
+    .full-name{
+        float: left;
+
+        .full-name-data{
+            font-size: 36px;
+        }
+    }
+
+    .follow-info{
+        float: right;
+        margin-right: 100px;
+    }
+
+    .title{
+        font-size: 12px;
+    }
+  }
+}

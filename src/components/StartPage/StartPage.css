@@ -1,5 +1,9 @@
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: antiquewhite; }
+  a .title-text {
+    top: 0;
+    bottom: 10vh; }
 
 .login-button {
   width: 100px;
@@ -29,9 +33,26 @@ a {
     .start-page {
       background: url("../../img/start_background_large.jpg"); } }
 
+@font-face {
+  font-family: myFont;
+  src: url("../../fonts/IndieFlower.ttf"); }
+
 .title-text {
+  font-family: myFont;
   position: absolute;
-  top: 10vh;
+  bottom: 5vh;
   left: 0;
   right: 0;
-  font-size: 23px; }
+  font-size: 36px;
+  color: antiquewhite;
+  font-weight: bold; }
+
+.login-text {
+  font-family: myFont;
+  top: 120px;
+  position: absolute;
+  font-size: 36px;
+  left: 0;
+  right: 0;
+  color: antiquewhite !important;
+  font-weight: bold; }
